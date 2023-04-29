@@ -16,6 +16,7 @@ Step 4.5 ; After creating the user, I didn't know how I was supposed to put its 
 
   Now back to fixing the original error of git 'remote-codecommit' is not a git command. - I fixed it by running CMD as administrator (when trying some of the answers I got this)![image](https://user-images.githubusercontent.com/77641113/235285561-21394201-6b70-4fe7-92c0-12a5d49686b3.png)
  and then trying the answer that said pip install git-remote-codecommit --force : https://stackoverflow.com/questions/63723839/aws-codecommit-with-git-remote-codecommit
+ (also looked at this which provided some context) : https://docs.aws.amazon.com/codecommit/latest/userguide/troubleshooting-grc.html#troubleshooting-grc-syn1
  
  So I ran the original command again - SUCCESS![image](https://user-images.githubusercontent.com/77641113/235285707-6c8560dd-d6d9-4e99-a34c-f2aca30e5b79.png)
 ***
