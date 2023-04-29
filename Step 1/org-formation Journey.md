@@ -7,6 +7,7 @@ Step 4.3 ; After creating user and Access Keys - used this video to install AWS 
 ***
 Step 4.4 ; Tried to run the command to create a CodeCommit repository and a CodePipeline but it failed due to it not finding the credentials file (which I deleted in the last step since thought wasn't needed since stored as a environment variable)![image](https://user-images.githubusercontent.com/77641113/235282568-d4390b66-e794-401a-9f7f-ae9bad848122.png)
   
+  
   So I restored the deleted files and ran again - SUCCESS
 ***
 Step 4.5 ; After creating the user, I didn't know how I was supposed to put its credenitals in the credentials file so I went to the run the git command anyway (in CMD which is what I have been using the whole time) and it didn't recognize it.
@@ -30,6 +31,7 @@ Step 5.2 ; I accidentally named the budgets.yml file wrong and committed it, so 
   
   But then I got a new error, where it didn't like the Commit ID I copied from the Commits section of the repo in AWS![image](https://user-images.githubusercontent.com/77641113/235307811-0464bc7b-9d97-4122-881b-27e285e78485.png)
   So I realized that in AWS it shows part of the ID in the Commit ID column but to get the full string you ahve to click the Copy ID button to the right of it (this is a good resource that points that out : https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-view-commit-details.html )
+  
   
   So I ran the original command again but with the longer Commit ID - SUCCESS!
 ***
