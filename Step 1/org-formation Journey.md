@@ -35,4 +35,4 @@ Step 5.2 ; I accidentally named the budgets.yml file wrong and committed it, so 
   
   So I ran the original command again but with the longer Commit ID - SUCCESS!
 ***
-Step 5.3 
+Step 5.6 ; Change the 100-sso-_tasks.yml file to be like the original
