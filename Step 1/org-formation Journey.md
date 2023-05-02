@@ -35,8 +35,11 @@ Step 5.2 ; I accidentally named the budgets.yml file wrong and committed it, so 
   
   So I ran the original command again but with the longer Commit ID - SUCCESS!
 ***
-Step 5.4 ; To add a second account (I called mine "Test Account 2") into the active OU in the organization.yml![image](https://user-images.githubusercontent.com/77641113/235786876-cf6e7e04-b2e1-4db4-a159-63ebbbc10dc6.png)
+Step 5.4 ; To add a second account (I called mine "Test Account 2") into the active OU in the organization.yml, do:![image](https://user-images.githubusercontent.com/77641113/235786876-cf6e7e04-b2e1-4db4-a159-63ebbbc10dc6.png)
 
+Which gives this result:
 Or can add it outside the active OU, so not in any OU, then just don't do add in "- !Ref TestAccount2"
+Which gives this result:![image](https://user-images.githubusercontent.com/77641113/235787973-393218f5-1c7b-4049-a32c-6e65a80028a5.png)
+
 ***
 Step 5.6 ; Change the 100-sso-_tasks.yml file to be like the original
