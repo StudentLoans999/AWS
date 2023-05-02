@@ -45,7 +45,8 @@ Which gives this result:
 Or can add it outside the active OU, so not in any OU, then just don't do add in "- !Ref TestAccount2"
 
 Which gives this result:
+
 ![image](https://user-images.githubusercontent.com/77641113/235787973-393218f5-1c7b-4049-a32c-6e65a80028a5.png)
 
 ***
-Step 5.6 ; Change the 100-sso-_tasks.yml file to be like the original
+Step 5.6 ; Having problems committing 100-sso/_tasks.yml file
