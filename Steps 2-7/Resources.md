@@ -1,9 +1,5 @@
-1. org-formation : https://github.com/org-formation/org-formation-cli
-  ***
-  a. Have to install npm - so used this video to learn how : https://youtu.be/P3aKRdUyr0s
-  
-  b. Only video on org-formation I could find for more info : https://www.youtube.com/watch?v=mLAGHzidHJ0
-  
-  *c. The best resource in learning how to use org-formation : https://bahr.dev/2022/02/07/org-formation/
+a. Register a domain : https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html
 
-  d. AWS blog post on org-formation : https://bahr.dev/2022/02/07/org-formation/
+b. Configuring a static website on Amazon S3 : https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html
+
+c. 
