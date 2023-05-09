@@ -76,4 +76,8 @@ Step 5.7 ; (I created a TestAcount3 and added it to the Suspended OU before star
 ***
 I then changed 100-sso/_tasks.yml SsoDeveloper block to point hte OrganizationalUnit from ActiveOU to DevOU so that only accounts in the DevOU have Developer permissions
 
-Final product: ![image](https://user-images.githubusercontent.com/77641113/236975931-70bab849-c8ed-4f97-9146-5e1a5288d9cd.png)
+Final product:
+
+![image](https://user-images.githubusercontent.com/77641113/236975931-70bab849-c8ed-4f97-9146-5e1a5288d9cd.png)
+
+![image](https://user-images.githubusercontent.com/77641113/236976709-58747836-673c-4e38-8498-2b60291300d5.png)
