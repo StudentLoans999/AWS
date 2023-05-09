@@ -21,7 +21,7 @@ Step 4.5 ; After creating the user, I didn't know how I was supposed to put its 
   
   So I followed these instructions till step 4 of the last step (4) : https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html
 
-  But running the command again from the OG guide into CMD I got this error "'git' is not recognized as an internal or external command - I went around it originally by using the installed Git Bash above, but I wanted to keep using cmdd so I fixed it by following the main answer here that states "Modifying PATH on Windows 10:" : https://stackoverflow.com/questions/4492979/error-git-is-not-recognized-as-an-internal-or-external-command
+  But running the command again from the OG guide into CMD I got this error "'git' is not recognized as an internal or external command - I went around it originally by using the installed Git Bash above, but I wanted to keep using cmd so I fixed it by following the main answer here that states "Modifying PATH on Windows 10:" : https://stackoverflow.com/questions/4492979/error-git-is-not-recognized-as-an-internal-or-external-command
 
   Now back to fixing the original error of git 'remote-codecommit' is not a git command. - I fixed it by running CMD as administrator (when trying some of the answers I got this)![image](https://user-images.githubusercontent.com/77641113/235285561-21394201-6b70-4fe7-92c0-12a5d49686b3.png)
  and then trying the answer that said pip install git-remote-codecommit --force : https://stackoverflow.com/questions/63723839/aws-codecommit-with-git-remote-codecommit
@@ -34,7 +34,7 @@ Step 4.5 ; After creating the user, I didn't know how I was supposed to put its 
 ***
 Step 5.1 ; Only thing to note is that spacing is important for .yml when listing out information.
 ***
-Step 5.2 ; I accidentally named the budgets.yml file wrong and committed it, so used this to learn how to delete the file from the repo - in the section "to felete a file" near the bottom : https://docs.aws.amazon.com/cli/latest/reference/codecommit/delete-file.html
+Step 5.2 ; I accidentally named the budgets.yml file wrong and committed it, so used this to learn how to delete the file from the repo - in the section "to delete a file" near the bottom : https://docs.aws.amazon.com/cli/latest/reference/codecommit/delete-file.html
 
   I edited it to match my own info and tried to paste it into CMD but it was treating it as one line (so the \ at the end of each line wasn't working), so I looked up how to write a multiline command in CMD and matt wilkie's answer worked for me.
   
