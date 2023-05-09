@@ -1,3 +1,7 @@
+***
+Summary:
+
+***
 My journey to complete Step 1 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
   (I will refer to it as OG guide going forward)
 
@@ -65,4 +69,5 @@ So I found https://aws.amazon.com/blogs/opensource/managing-aws-organizations-us
 
 ![image](https://user-images.githubusercontent.com/77641113/236969181-498789d9-3fdd-4a0d-8e99-892e73ee08df.png)
 
-
+***
+Step 5.7 ; (I created a TestAcount3 and added it to the Suspended OU before starting this step. I also added a DevOU and created a TestAccount4 into it.) - SSO landing page setup is straightforward
