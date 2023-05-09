@@ -1,6 +1,7 @@
 ***
 Summary:
 
+
 ***
 My journey to complete Step 1 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
   (I will refer to it as OG guide going forward)
