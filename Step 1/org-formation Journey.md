@@ -5,7 +5,9 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 ***
 Step 4.3 ; After creating user and Access Keys - used this video to install AWS CLI and set credentials as environment variables so not storing credentials and config files locally (which is bad security practice) ; I then deleted the config and credentials files : https://www.youtube.com/watch?v=PWAnY-w1SGQ
 ***
-Step 4.4 ; Tried to run the command to create a CodeCommit repository and a CodePipeline but it failed due to it not finding the credentials file (which I deleted in the last step since thought wasn't needed since stored as a environment variable)![image](https://user-images.githubusercontent.com/77641113/235282568-d4390b66-e794-401a-9f7f-ae9bad848122.png)
+Step 4.4 ; Tried to run the command to create a CodeCommit repository and a CodePipeline but it failed due to it not finding the credentials file (which I deleted in the last step since thought wasn't needed since stored as a environment variable)
+
+![image](https://user-images.githubusercontent.com/77641113/235282568-d4390b66-e794-401a-9f7f-ae9bad848122.png)
   
   
   So I restored the deleted files and ran again - SUCCESS
@@ -21,7 +23,9 @@ Step 4.5 ; After creating the user, I didn't know how I was supposed to put its 
  
   (also looked at this which provided some context) : https://docs.aws.amazon.com/codecommit/latest/userguide/troubleshooting-grc.html#troubleshooting-grc-syn1
  
- So I ran the original command again - SUCCESS![image](https://user-images.githubusercontent.com/77641113/235285707-6c8560dd-d6d9-4e99-a34c-f2aca30e5b79.png)
+ So I ran the original command again - SUCCESS!
+ 
+ ![image](https://user-images.githubusercontent.com/77641113/235285707-6c8560dd-d6d9-4e99-a34c-f2aca30e5b79.png)
 ***
 Step 5.1 ; Only thing to note is that spacing is important for .yml when listing out information.
 ***
@@ -35,7 +39,9 @@ Step 5.2 ; I accidentally named the budgets.yml file wrong and committed it, so 
   
   So I ran the original command again but with the longer Commit ID - SUCCESS!
 ***
-Step 5.4 ; To add a second account (I called mine "Test Account 2") into the active OU in the organization.yml, do:![image](https://user-images.githubusercontent.com/77641113/235786876-cf6e7e04-b2e1-4db4-a159-63ebbbc10dc6.png)
+Step 5.4 ; To add a second account (I called mine "Test Account 2") into the active OU in the organization.yml, do:
+
+![image](https://user-images.githubusercontent.com/77641113/235786876-cf6e7e04-b2e1-4db4-a159-63ebbbc10dc6.png)
 
 Which gives this result:
 
@@ -49,4 +55,14 @@ Which gives this result:
 ![image](https://user-images.githubusercontent.com/77641113/235787973-393218f5-1c7b-4049-a32c-6e65a80028a5.png)
 
 ***
-Step 5.6 ; Having problems committing 100-sso/_tasks.yml file
+Step 5.6 ; After doing what's listed in this step, the commit was failing with this result:
+
+![image](https://user-images.githubusercontent.com/77641113/236968808-1c02acbc-575b-475d-9d52-ebb0d702b9c7.png)
+
+The build log says it can't parse masterAccountId from the expression {"Ref":"MasterAccount"}
+
+So I found https://aws.amazon.com/blogs/opensource/managing-aws-organizations-using-the-open-source-org-formation-tool-part-1/ (Resource d.) and saw that their organization.yml file says MasterAccount instead of ManagementAccount so I changed my file to match - SUCCESS!
+
+![image](https://user-images.githubusercontent.com/77641113/236969181-498789d9-3fdd-4a0d-8e99-892e73ee08df.png)
+
+
