@@ -1,6 +1,8 @@
 {
+    "_comment": "This gives access to the bucket created (just replace everything before the /* in the Resource line with your actual bucket ARN - can be found in Permissions-Bucket policy",   
     "Version":"2012-10-17",
-    "Statement":[
+    "Statement":
+    [
       {
         "Sid":"PublicRead",
         "Effect":"Allow",
