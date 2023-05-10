@@ -100,7 +100,7 @@ So I found https://aws.amazon.com/blogs/opensource/managing-aws-organizations-us
 (I created a TestAcount3 and added it to the Suspended OU before starting this step. I also added a DevOU and created a TestAccount4 into it.) - SSO landing page setup is straightforward
 
 ***
-I then changed 100-sso/_tasks.yml SsoDeveloper block to point hte OrganizationalUnit from ActiveOU to DevOU so that only accounts in the DevOU have Developer permissions
+I then changed the 100-sso/_tasks.yml SsoDeveloper block to point the OrganizationalUnit from ActiveOU to DevOU so that only accounts in the DevOU have Developer permissions
 
 # Final product:
 
