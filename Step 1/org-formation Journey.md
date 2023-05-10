@@ -45,10 +45,11 @@ Only thing to note is that spacing is important for .yml when listing out inform
 ## Step 5.2
 I accidentally named the budgets.yml file wrong and committed it, so used this to learn how to delete the file from the repo - in the section "to delete a file" near the bottom : https://docs.aws.amazon.com/cli/latest/reference/codecommit/delete-file.html
 
-  I edited it to match my own info and tried to paste it into CMD but it was treating it as one line (so the \ at the end of each line wasn't working), so I looked up how to write a multiline command in CMD and matt wilkie's answer worked for me.
+  I copied that code from that section and edited it to match my own info and tried to paste it into CMD but it was treating it as one line (so the \ at the end of each line wasn't working), so I looked up how to write a multiline command in CMD and matt wilkie's answer worked for me (which was to use ^ at the end of each line).
+  https://stackoverflow.com/questions/605686/how-to-write-a-multiline-command
   
   But then I got a new error, where it didn't like the Commit ID I copied from the Commits section of the repo in AWS![image](https://user-images.githubusercontent.com/77641113/235307811-0464bc7b-9d97-4122-881b-27e285e78485.png)
-  So I realized that in AWS it shows part of the ID in the Commit ID column but to get the full string you ahve to click the Copy ID button to the right of it (this is a good resource that points that out : https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-view-commit-details.html )
+  So I realized that in AWS it shows part of the ID in the Commit ID column but to get the full string you have to click the Copy ID button to the right of it (this is a good resource that points that out : https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-view-commit-details.html )
   
   
   So I ran the original command again but with the longer Commit ID - SUCCESS!
