@@ -21,7 +21,7 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 
 **Step 5.6 - Enabled AWS SSO in the console, created a sso folder and created in it: _tasks.yml and aws-sso.yml ; added the SSO task to the end of organization-tasks.yml ; committed it to the pipeline to apply the changes**
 
-**Step 5.7 - E**
+**Step 5.7 - (What I did on my own, not following the OG guide, was created a TestAccount3 and added it to the Suspended OU ; also created a DevOU and a TestAccount4 into it) ; created a user in the AWS SSO console and assigned it to the Developer group**
 
 ***
 
