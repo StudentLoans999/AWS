@@ -1,3 +1,8 @@
+My journey to complete Step 1 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
+  (I will refer to it as OG guide going forward)
+
+Below I listed the actions I took that needed extra explanation (otherwise followed the guide explicitly and easily enough)
+
 ***
 # Summary:
 #### Step 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables
@@ -6,11 +11,7 @@
 #### Step 5.1 - Added the first account and two organizational units (OU) by using .yml and committed it to the pipeline to apply the changes
 #### Step 5.2 - A
 ***
-My journey to complete Step 1 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
-  (I will refer to it as OG guide going forward)
 
-Below I listed the actions I took that needed extra explanation (otherwise followed the guide explicitly and easily enough)
-***
 ## Step 4.3
 After creating user and Access Keys - used this video to install AWS CLI and set credentials as environment variables so not storing credentials and config files locally (which is bad security practice) ; I then deleted the config and credentials files : https://www.youtube.com/watch?v=PWAnY-w1SGQ
 ***
