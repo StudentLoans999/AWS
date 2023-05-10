@@ -1,7 +1,10 @@
 ***
 # Summary:
-
-
+#### Step 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables
+#### Step 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)
+#### Step 4.5 - Cloned CodeCommit using Git
+#### Step 5.1 - Added the first account and two organizational units (OU) by using .yml and committed it to the pipeline to apply the changes
+#### Step 5.2 - A
 ***
 My journey to complete Step 1 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
   (I will refer to it as OG guide going forward)
@@ -20,11 +23,11 @@ Tried to run the command to create a CodeCommit repository and a CodePipeline bu
   So I restored the deleted files and ran again - SUCCESS
 ***
 ## Step 4.5
-After creating the user, I didn't know how I was supposed to put its credenitals in the credentials file so I went to the run the git command anyway (in CMD which is what I have been using the whole time) and it didn't recognize it.
+After creating the user, I didn't know how I was supposed to put its credenitals in the credentials file so I went to run the git command anyway (in CMD which is what I have been using the whole time) and it didn't recognize it.
   
-  So I followed these instructions till step 4 of the last step (4) : https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html
+  So I followed these instructions steps 1-3 : https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html
 
-  But running the command again from the OG guide into CMD I got this error "'git' is not recognized as an internal or external command - I went around it originally by using the installed Git Bash above, but I wanted to keep using cmd so I fixed it by following the main answer here that states "Modifying PATH on Windows 10:" : https://stackoverflow.com/questions/4492979/error-git-is-not-recognized-as-an-internal-or-external-command
+  But running the command again from the OG guide into CMD I got this error "'git' is not recognized as an internal or external command - I went around it originally by using the installed Git Bash above, but I wanted to keep using CMD so I fixed it by following the main answer here that states "Modifying PATH on Windows 10:" : https://stackoverflow.com/questions/4492979/error-git-is-not-recognized-as-an-internal-or-external-command
 
   Now back to fixing the original error of git 'remote-codecommit' is not a git command. - I fixed it by running CMD as administrator (when trying some of the answers I got this)![image](https://user-images.githubusercontent.com/77641113/235285561-21394201-6b70-4fe7-92c0-12a5d49686b3.png)
  and then trying the answer that said pip install git-remote-codecommit --force : https://stackoverflow.com/questions/63723839/aws-codecommit-with-git-remote-codecommit
