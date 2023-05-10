@@ -9,7 +9,8 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 #### Step 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)
 #### Step 4.5 - Cloned CodeCommit using Git
 #### Step 5.1 - Added the first account and two organizational units (OU) by using .yml and committed it to the pipeline to apply the changes
-#### Step 5.2 - A
+#### Step 5.2 - Created a Budgets task by using .yml and committed it to the pipeline to apply the changes (shouldn't break anything since this new task doesn't apply anywhere yet)
+#### Step 5.3 - Created Budget Alerts
 ***
 
 ## Step 4.3
