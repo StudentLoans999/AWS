@@ -4,7 +4,7 @@ My journey to complete Step 1 (org-formation) begins with following this guide :
 Below I listed the actions I took that needed extra explanation (otherwise followed the guide explicitly and easily enough)
 
 ***
-# Summary:
+# Summary: #
 **Step 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables
 Step 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)
 Step 4.5 - Cloned CodeCommit using Git
