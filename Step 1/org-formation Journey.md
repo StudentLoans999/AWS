@@ -5,12 +5,16 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 
 ***
 # Summary:
-#### Step 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables
-#### Step 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)
-#### Step 4.5 - Cloned CodeCommit using Git
-#### Step 5.1 - Added the first account and two organizational units (OU) by using .yml and committed it to the pipeline to apply the changes
-#### Step 5.2 - Created a Budgets task by using .yml and committed it to the pipeline to apply the changes (shouldn't break anything since this new task doesn't apply anywhere yet)
-#### Step 5.3 - Created Budget Alerts
+**Step 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables
+Step 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)
+Step 4.5 - Cloned CodeCommit using Git
+Step 5.1 - Added the first account and two organizational units (OU) by using organization.yml ; committed it to the pipeline to apply the changes
+Step 5.2 - Created a Budgets task by creating a budgets folder and created in it: _task.yml and budgets.yml ; committed it to the pipeline to apply the changes (shouldn't break anything since this new task doesn't apply anywhere yet)
+Step 5.3 - Created Budget Alert tags in organization.yml ; committed it to the pipeline to apply the changes (should receive a verification email about the new budget alerts)
+Step 5.4 - Added a new account into/outside of the active OU in the organization.yml with budget alert tags ; committed it to the pipeline to apply the changes
+Step 5.6 - Enabled AWS SSO in the console, created a sso folder and created in it: _tasks.yml and aws-sso.yml ; added the SSO task to the end of organization-tasks.yml ; committed it to the pipeline to apply the changes
+
+**
 ***
 
 ## Step 4.3
