@@ -1,16 +1,11 @@
-***
-Summary:
-
-
-***
 My journey to complete Step 2-7 (creating and hosting a static website).
 
 Below I listed the actions I took
-***
-Step 1 ; Registered a domain (davidrichey.org) using Route 53 in AWS (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html)
-***
 
-Step 2 ; Created a bucket in AWS called myresume.davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step) (https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
+***
+# Summary: #
+**Step 1 - Registered a domain (davidrichey.org) using Route 53 in AWS (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html)**
+**Step 2 - Created a bucket in AWS called myresume.davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step) (https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)**
   
   Enabled Static Website hosting with the Index document set as index.html and the Error document set as error.html
   
