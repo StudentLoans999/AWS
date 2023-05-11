@@ -57,6 +57,8 @@ Uploaded html docs and css doc
 Enabled static website hosting and put in index.html and error.html (now can see Resume at http://myresume.davidrichey.org.s3-website-us-east-1.amazonaws.com/)
 Add
 
+https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-s3-amazon-cloudfront-a-match-made-in-the-cloud/
+
 How I setup HTTPS (Behavior section on CloudFront) -
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html
 
