@@ -40,6 +40,12 @@ Put previous configs here:
 Domain -
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/95353be2-8dc1-441a-b1f4-fcd7f2560709)
 
+A Record for Domain -
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/7bd649b2-2530-4558-bec1-dac33faeed60)
+
+A different A Record for Domain -
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/34776836-dd8b-40ef-a035-24a5ff1405d6)
+
 Buckets -
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/aa364254-32ef-42d4-8557-7f5767d4ec17)
 
