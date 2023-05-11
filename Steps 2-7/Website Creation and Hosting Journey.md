@@ -4,13 +4,13 @@ Below I listed the actions I took
 
 ***
 # Summary: #
-**Step 1 - Registered a domain (davidrichey.org) using Route 53 in AWS**
+**Part 1 - Registered a domain (davidrichey.org) using Route 53 in AWS**
 
-**Step 2 - Created a bucket in AWS called myresume.davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step)**
+**Part 2 - Created a bucket in AWS called davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step)**
 
-**Step 3 -**
+**Part 3 -**
 
-**Step 4 -**
+**Part 4 -**
 
 ***
 
@@ -18,7 +18,7 @@ Below I listed the actions I took
 Registered a domain (davidrichey.org) using Route 53 in AWS (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html)
 ***
 ## Step 2
-Created a bucket in AWS called myresume.davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step) (https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
+Created a bucket in AWS called davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step) (https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
 
   
   Enabled Static Website hosting with the Index document set as index.html and the Error document set as error.html
