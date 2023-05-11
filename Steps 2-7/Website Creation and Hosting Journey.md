@@ -26,7 +26,8 @@ Created a bucket in AWS called myresume.davidrichey.org (needed to put the domai
   Created index.html, error.html, and style.css using codepen.io - uploaded them in the bucket root path (can't be in a folder) (make sure to upload the style.css file in the same place as index.html and put this code in the .html so it links to the css file:
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/342d1c61-d7bb-4448-817b-340d4800093a)
 ***
-## Step 3 ; In Route 53, added an A Record in the Hosted zone of the domain created earlier, with the name resume (to match the bucket name) - this way the Bucket website endpoint (found in Proeprties of the bucket) url changes from http://myresume.davidrichey.org.s3-website-us-east-1.amazonaws.com to http://myresume.davidrichey.org/
+## Step 3 
+In Route 53, added an A Record in the Hosted zone of the domain created earlier, with the name resume (to match the bucket name) - this way the Bucket website endpoint (found in Proeprties of the bucket) url changes from http://myresume.davidrichey.org.s3-website-us-east-1.amazonaws.com to http://myresume.davidrichey.org/
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/02310990-be91-4179-88db-0fc15b0bd27f)
 
