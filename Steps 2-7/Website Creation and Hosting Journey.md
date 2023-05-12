@@ -8,10 +8,15 @@ Below I listed the actions I took (I didn't list all the trouble I had trying to
 
 **Step 2 - Created a bucket in AWS called davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step) with some settings set**
 
-**Step 3 -**
+**Step 3 - Created a Stack that created a CloudFront distribution by using the bucket created earlier**
 
-**Step 4 -**
+**Step 4 - Changed the settings of the CloudFront distribution to be viewed correctly (https)**
 
+**Step 5 - Created a Public Certificate and added a CNAME Record in the Route 53 domain for it**
+
+**Step 6 - Added an Alternative domain name to the CloudFront distribution and associated the Public Certificate to it**
+
+**Step 7 - Added an A record in Route 53 for the domain to rotue point the CloudFront distribution traffic to the Alternative domain name**
 ***
 
 ## Step 1 
@@ -49,7 +54,7 @@ Used this website to make the S3 website URL use HTTPS and followed the steps fo
   To do Step 7), I did the steps below
 ***
 ## Step 4
-I went to the newly created CloudFront Distribution and edited the Behavior to these settings (guided by arpanexe's answer here: https://stackoverflow.com/questions/36466092/custom-domain-for-api-gateway-returning-403)
+I went to the newly created CloudFront distribution and edited the Behavior to these settings (guided by arpanexe's answer here: https://stackoverflow.com/questions/36466092/custom-domain-for-api-gateway-returning-403)
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/83259752-f2cb-4a1b-8d55-2595c7e9cd3f)
 
@@ -69,7 +74,7 @@ I then went to AWS Certificate Manager and requested a Public Certificate that I
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/3b6d7927-1e05-4288-bfbf-dd30e14b28cb)
 ***
 ## Step 6
-I went back to the CloudFront Distribution and in the General menu, I edited the Settings to create an Alternate domain name (CNAME) with the value of davidrichey.org (since the CloudFront domain name is actually whatever it was created as, it will follow this kind of name format .cloudfront.net)
+I went back to the CloudFront distribution and in the General menu, I edited the Settings to create an Alternate domain name (CNAME) with the value of davidrichey.org (since the CloudFront domain name is actually whatever it was created as, it will follow this kind of name format .cloudfront.net)
   
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/d73f8087-8b77-42e0-9f09-e490660e0350)
   
