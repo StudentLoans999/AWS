@@ -1,16 +1,16 @@
 My journey to complete Step 2-7 (creating and hosting a static website that uses HTTPS with a custom DNS domain name and visitor counter).
 
-Below I listed the actions I took
+Below I listed the actions I took (I didn't list all the trouble I had trying to make this all work - like in Step 3 I tried Stacks A and C from the website without success)
 
 ***
 # Summary: #
-**Part 1 - Registered a domain (davidrichey.org) using Route 53 in AWS**
+**Step 1 - Registered a domain (davidrichey.org) using Route 53 in AWS**
 
-**Part 2 - Created a bucket in AWS called davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step)**
+**Step 2 - Created a bucket in AWS called davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step) with some settings set**
 
-**Part 3 -**
+**Step 3 -**
 
-**Part 4 -**
+**Step 4 -**
 
 ***
 
@@ -19,27 +19,14 @@ Registered a domain (davidrichey.org) using Route 53 in AWS (https://docs.aws.am
 ***
 ## Step 2
 Created a bucket in AWS called davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later step) (https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
-
+  
+  Created index.html, error.html, and style.css using codepen.io - uploaded them in the bucket's root path (can't be in a folder) (make sure to upload the style.css file in the same place as index.html and put this code in index.html so it links to the css file):
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/342d1c61-d7bb-4448-817b-340d4800093a)
   
   Enabled Static Website hosting with the Index document set as index.html and the Error document set as error.html
   
-  Created index.html, error.html, and style.css using codepen.io - uploaded them in the bucket root path (can't be in a folder) (make sure to upload the style.css file in the same place as index.html and put this code in the .html so it links to the css file:
-  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/342d1c61-d7bb-4448-817b-340d4800093a)
-***
-## Step 3 
-In Route 53, added an A Record in the Hosted zone of the domain created earlier, with the name resume (to match the bucket name) - this way the Bucket website endpoint (found in Proeprties of the bucket) url changes from http://myresume.davidrichey.org.s3-website-us-east-1.amazonaws.com to http://myresume.davidrichey.org/
-
-![image](https://github.com/StudentLoans999/AWS/assets/77641113/02310990-be91-4179-88db-0fc15b0bd27f)
-
-***
-Step 4 ; Now we are on the fifth part of the CRC. 
-
-
-**********************
-
-Created a bucket (gave it the same name as my domain but appending myresume. before, so name is myresume.davidrichey.org)
-Added this bucket policy:
-{
+  Created a bucket policy to give permission to use the bucket (read the .html files)
+  {
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -47,17 +34,33 @@ Added this bucket policy:
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::myresume.davidrichey.org/*"
+            "Resource": "arn:aws:s3:::davidrichey.org/*"
         }
     ]
 }
+  
+  Created a bucket policy to give permission to use the bucket (read the .html files)
+  
+  Unblocked all Public access to bucket, so that is accessible to the public
+***
+## Step 3 
+Used this website to make the S3 website URL use HTTPS and followed the steps for Stack B - didn't do Steps 4) and 5) since they don't apply since I already created a bucket policy and chose not to enable OAI: (https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-s3-amazon-cloudfront-a-match-made-in-the-cloud/)
+  
+  To do Step 7), I did the steps below
+***
+## Step 4
+I went to the newly created CloudFront Distribution and edited the Behavior to these settings (guided by arpanexe's answer here: https://stackoverflow.com/questions/36466092/custom-domain-for-api-gateway-returning-403)
 
-Unblocked all Public access in it, so accessible to public
-Uploaded html docs and css doc
-Enabled static website hosting and put in index.html and error.html (now can see Resume at http://myresume.davidrichey.org.s3-website-us-east-1.amazonaws.com/)
-Add
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/83259752-f2cb-4a1b-8d55-2595c7e9cd3f)
 
-https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-s3-amazon-cloudfront-a-match-made-in-the-cloud/
+  Then I went into Invalidations and had it set to affect every object (clears the cache)
+***
+## Step 5
+In Route 53, added an A Record in the Hosted zone of the domain created earlier, with the name resume (to match the bucket name) - this way the Bucket website endpoint (found in Proeprties of the bucket) url changes from http://myresume.davidrichey.org.s3-website-us-east-1.amazonaws.com to http://myresume.davidrichey.org/
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/02310990-be91-4179-88db-0fc15b0bd27f)
+
+**********************
 
 How I setup HTTPS (Behavior section on CloudFront) -
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html
