@@ -84,6 +84,8 @@ I went back to the CloudFront distribution and in the General menu, I edited the
   
   Make sure IPv6 is set to Off, since having it On will add extra steps - this post should help with this step and the next if you get stuck, and offers the additional steps if you do use IPv6 (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html)
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/8274cd55-51c2-4046-bcd7-54094149a6e7)
+  
+  Make sure the distribution changes have finished deploying before moving to the next step
 ## Step 7
 This step is also Step 7 in the link I posted above.
 
