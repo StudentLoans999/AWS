@@ -1,42 +1,42 @@
-My journey to complete Step 1 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
+My journey to complete Step 0 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
   (I will refer to it as OG guide going forward)
 
 Below I listed the actions I took that needed extra explanation (otherwise followed the guide explicitly and easily enough)
 
 ***
 # Summary: #
-**Step 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables**
+**Action 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables**
 
-**Step 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)**
+**Action 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)**
 
-**Step 4.5 - Cloned CodeCommit using Git**
+**Action 4.5 - Cloned CodeCommit using Git**
 
-**Step 5.1 - Added the first account and two organizational units (OU) by using organization.yml ; committed it to the pipeline to apply the changes**
+**Action 5.1 - Added the first account and two organizational units (OU) by using organization.yml ; committed it to the pipeline to apply the changes**
 
-**Step 5.2 - Created a Budgets task by creating a budgets folder and created in it: _task.yml and budgets.yml ; committed it to the pipeline to apply the changes (shouldn't break anything since this new task doesn't apply anywhere yet)**
+**Action 5.2 - Created a Budgets task by creating a budgets folder and created in it: _task.yml and budgets.yml ; committed it to the pipeline to apply the changes (shouldn't break anything since this new task doesn't apply anywhere yet)**
 
-**Step 5.3 - Created Budget Alert tags in organization.yml ; committed it to the pipeline to apply the changes (should receive a verification email about the new budget alerts)**
+**Action 5.3 - Created Budget Alert tags in organization.yml ; committed it to the pipeline to apply the changes (should receive a verification email about the new budget alerts)**
 
-**Step 5.4 - Added a new account into/outside of the active OU in the organization.yml with budget alert tags ; committed it to the pipeline to apply the changes**
+**Action 5.4 - Added a new account into/outside of the active OU in the organization.yml with budget alert tags ; committed it to the pipeline to apply the changes**
 
-**Step 5.6 - Enabled AWS SSO in the console, created a sso folder and created in it: _tasks.yml and aws-sso.yml ; added the SSO task to the end of organization-tasks.yml ; committed it to the pipeline to apply the changes**
+**Action 5.6 - Enabled AWS SSO in the console, created a sso folder and created in it: _tasks.yml and aws-sso.yml ; added the SSO task to the end of organization-tasks.yml ; committed it to the pipeline to apply the changes**
 
-**Step 5.7 - (What I did on my own, not following the OG guide, was created a TestAccount3 and added it to the Suspended OU ; also created a DevOU and a TestAccount4 into it) ; created a user (david) in the AWS SSO console and assigned it to the Developer group ; (on my own, I assigned david to use MFA in the AWS SSO console in the users section)**
+**Action 5.7 - (What I did on my own, not following the OG guide, was created a TestAccount3 and added it to the Suspended OU ; also created a DevOU and a TestAccount4 into it) ; created a user (david) in the AWS SSO console and assigned it to the Developer group ; (on my own, I assigned david to use MFA in the AWS SSO console in the users section)**
 
 ***
 
-## Step 4.3
+## Action 4.3
 After creating user and Access Keys - used this video to install AWS CLI and set credentials as environment variables so not storing credentials and config files locally (which is bad security practice) ; I then deleted the config and credentials files : https://www.youtube.com/watch?v=PWAnY-w1SGQ
 ***
-## Step 4.4
-Tried to run the command to create a CodeCommit repository and a CodePipeline but it failed due to it not finding the credentials file (which I deleted in the last step since thought wasn't needed since stored as a environment variable)
+## Action 4.4
+Tried to run the command to create a CodeCommit repository and a CodePipeline but it failed due to it not finding the credentials file (which I deleted in the last action since thought wasn't needed since stored as a environment variable)
 
 ![image](https://user-images.githubusercontent.com/77641113/235282568-d4390b66-e794-401a-9f7f-ae9bad848122.png)
   
   
   So I restored the deleted files and ran again - SUCCESS
 ***
-## Step 4.5
+## Action 4.5
 After creating the user, I didn't know how I was supposed to put its credenitals in the credentials file so I went to run the git command anyway (in CMD which is what I have been using the whole time) and it didn't recognize it.
   
   So I followed these instructions steps 1-3 : https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html
@@ -52,10 +52,10 @@ After creating the user, I didn't know how I was supposed to put its credenitals
  
  ![image](https://user-images.githubusercontent.com/77641113/235285707-6c8560dd-d6d9-4e99-a34c-f2aca30e5b79.png)
 ***
-## Step 5.1
+## Action 5.1
 Only thing to note is that spacing is important for .yml when listing out information.
 ***
-## Step 5.2
+## Action 5.2
 I accidentally named the budgets.yml file wrong and committed it, so used this to learn how to delete the file from the repo - in the section "to delete a file" near the bottom : https://docs.aws.amazon.com/cli/latest/reference/codecommit/delete-file.html
 
   I copied that code from that section and edited it to match my own info and tried to paste it into CMD but it was treating it as one line (so the \ at the end of each line wasn't working), so I looked up how to write a multiline command in CMD and Matt Wilkie's answer worked for me (which was to use ^ at the end of each line).
@@ -67,7 +67,7 @@ I accidentally named the budgets.yml file wrong and committed it, so used this t
   
   So I ran the original command again but with the longer Commit ID - SUCCESS!
 ***
-## Step 5.4
+## Action 5.4
 To add a second account (I called mine "Test Account 2") into the active OU in the organization.yml, do:
 
 ![image](https://user-images.githubusercontent.com/77641113/235786876-cf6e7e04-b2e1-4db4-a159-63ebbbc10dc6.png)
@@ -84,8 +84,8 @@ Which gives this result:
 ![image](https://user-images.githubusercontent.com/77641113/235787973-393218f5-1c7b-4049-a32c-6e65a80028a5.png)
 
 ***
-## Step 5.6
-After doing what's listed in this step, the commit was failing with this result:
+## Action 5.6
+After doing what's listed in this action, the commit was failing with this result:
 
 ![image](https://user-images.githubusercontent.com/77641113/236968808-1c02acbc-575b-475d-9d52-ebb0d702b9c7.png)
 
@@ -96,8 +96,8 @@ So I found https://aws.amazon.com/blogs/opensource/managing-aws-organizations-us
 ![image](https://user-images.githubusercontent.com/77641113/236969181-498789d9-3fdd-4a0d-8e99-892e73ee08df.png)
 
 ***
-## Step 5.7
-(I created a TestAcount3 and added it to the Suspended OU before starting this step. I also added a DevOU and created a TestAccount4 into it.) - SSO landing page setup is straightforward
+## Action 5.7
+(I created a TestAcount3 and added it to the Suspended OU before starting this action. I also added a DevOU and created a TestAccount4 into it.) - SSO landing page setup is straightforward
 
 ***
 I then changed the 100-sso/_tasks.yml SsoDeveloper block to point the OrganizationalUnit from ActiveOU to DevOU so that only accounts in the DevOU have Developer permissions
