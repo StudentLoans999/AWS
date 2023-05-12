@@ -1,4 +1,4 @@
-My journey to complete Step 2-7 (creating and hosting a static website that uses HTTPS with a custom DNS domain name and visitor counter).
+My journey to complete Step 2-7 (creating and hosting a static website that uses HTTPS with a custom DNS domain name).
 
 Below I listed the actions I took (I didn't list all the trouble I had trying to make this all work - like in Step 3 I tried Stacks A and C from the website without success)
 
