@@ -14,9 +14,9 @@ Below I listed the actions I took (I didn't list all the trouble I had trying to
 
 **Step 5 - Created a Public Certificate and added a CNAME Record in the Route 53 domain for it**
 
-**Step 6 - Added an Alternative domain name to the CloudFront distribution and associated the Public Certificate to it**
+**Step 6 - Added two Alternative domain namea to the CloudFront distribution and associated the Public Certificate to it**
 
-**Step 7 - Added an A record in Route 53 for the domain to rotue point the CloudFront distribution traffic to the Alternative domain name**
+**Step 7 - Added two A records in Route 53 for the domain to point the CloudFront distribution traffic to the Alternative domain names**
 ***
 
 ## Step 1 
@@ -62,23 +62,23 @@ I went to the newly created CloudFront distribution and edited the Behavior to t
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/a84b88c8-bff0-4c4f-a0a5-2fe0dc366696)
 ***
 ## Step 5
-I then went to AWS Certificate Manager and requested a Public Certificate that I could use for https (I put in the domain name: davidrichey.org). 
+I then went to AWS Certificate Manager and requested a Public Certificate that I could use for https (I put in the domain name: davidrichey.org and the name *.davidrichey.org). 
   
   (https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html)
   
   After I requested it, I refreshed the console window and a new option appeared to create a DNS Validation in Route 53, so I clicked it in order for the request to be validated.
   
-  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/913731f5-7bed-4e1b-a7bb-1939bea732b7)
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/7bee600b-2033-488d-bec2-5d7297e4a649)
 
   (https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html)
   
   This created a new CNAME record:
-  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/3b6d7927-1e05-4288-bfbf-dd30e14b28cb)
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/7cce6b7b-1ab9-4faf-b740-ec9f227aea66)
 ***
 ## Step 6
-I went back to the CloudFront distribution and in the General menu, I edited the Settings to create an Alternate domain name (CNAME) with the value of davidrichey.org (since the CloudFront domain name is actually whatever it was created as, it will follow this kind of name format .cloudfront.net)
+I went back to the CloudFront distribution and in the General menu, I edited the Settings to create two Alternate domain names (CNAME) with the values of davidrichey.org and *.davidrichey.org (since the CloudFront domain name is actually whatever it was created as, and that would follow the format of .cloudfront.net)
   
-  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/d73f8087-8b77-42e0-9f09-e490660e0350)
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/3d27fe94-2abf-4c97-a0c2-7f0183d3057c)
   
   I also associated the certificate I created earlier.
   
@@ -89,23 +89,29 @@ I went back to the CloudFront distribution and in the General menu, I edited the
 ## Step 7
 This step is also Step 7 in the link I posted above.
 
-  In Route 53, I added an A Record in the Hosted zone of the domain created earlier, with the name davidrichey.org that routes traffic to the CloudFront distribution's domain name (the .cloudfront.net looking name) 
+  In Route 53, I added two A Recorda in the Hosted zone of the domain created earlier, with the namea davidrichey.org and *.davidrichey.org that routes traffic to the CloudFront distribution's domain name (the .cloudfront.net looking name) 
   
-  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/ee16abb3-8fe2-4e65-a94c-cb87e4320a7c)
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/f59897c3-2ea0-430e-a48a-4382145a7a85)
+
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/310a738f-baaa-4148-850e-32f989a3937b)
   
   (this post has good info: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html)
   
-  Give it a few minutes to apply and then in a new window, open davidrichey.org and make sure it displays properly and is https (Google Chrome shows it as a lock symbol).
+  Give it a few minutes to apply and then in a new window, open davidrichey.org and make sure it displays properly and is https (Google Chrome shows it as a lock symbol). Do the same with www.davidrichey.org
   If it doesn't, one of the steps above didn't get completed correctly. In the link above, step 8 says to use dig on your domain and that it should show CNAME but mine doesn't (I tried doing Step 7 here as a CNAME Record instead of an A Record and it didn't work - this offers an explanation: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html)
   
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/625788bc-9d51-44d7-b318-cf80876b9b52)
 
 # Final product:
-https://davidrichey.org/ aka davidrichey.org
+https://davidrichey.org/ aka davidrichey.org and also www.davidrichey.org
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/90024662-4a40-4334-8747-477aa276360c)
 
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/008dc996-1979-4802-a1b3-6816800453a8)
+
 Additional info:
+
+If get stuck, use this: (https://stackoverflow.com/questions/65271180/aws-static-website-apex-domain-returns-403-www-subdomain-works-fine)
 
 How I setup HTTPS (Behavior section on CloudFront) -
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html
