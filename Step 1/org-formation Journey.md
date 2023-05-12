@@ -1,4 +1,4 @@
-My journey to complete Step 0 (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
+My journey to complete Step 1 (not following the website numbering structure, which lists step 1 as getting certified (org-formation) begins with following this guide : https://bahr.dev/2022/02/07/org-formation/ (also in Resources.md *c)
   (I will refer to it as OG guide going forward)
 
 Below I listed the actions I took that needed extra explanation (otherwise followed the guide explicitly and easily enough)
