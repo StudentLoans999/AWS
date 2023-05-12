@@ -15,3 +15,5 @@ The domain wouldn't update with the new html so I went into the CloudFront distr
 https://davidrichey.org/ aka davidrichey.org and also www.davidrichey.org
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/75f97f48-1961-4ca8-a6cd-e399f2b11512)
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/026796c5-25bd-4007-af28-735820dc2ec1)
