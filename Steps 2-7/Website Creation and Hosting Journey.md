@@ -67,6 +67,8 @@ I then went to AWS Certificate Manager and requested a Public Certificate that I
   (https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html)
   
   After I requested it, I refreshed the console window and a new option appeared to create a DNS Validation in Route 53, so I clicked it in order for the request to be validated.
+  
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/913731f5-7bed-4e1b-a7bb-1939bea732b7)
 
   (https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html)
   
