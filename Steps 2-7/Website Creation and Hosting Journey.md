@@ -53,32 +53,51 @@ I went to the newly created CloudFront Distribution and edited the Behavior to t
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/83259752-f2cb-4a1b-8d55-2595c7e9cd3f)
 
-  Then I went into Invalidations and had it set to affect every object (clears the cache)
+  Then I went into Invalidations and had it set to affect every object (clears the cache, in case it was needed)
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/a84b88c8-bff0-4c4f-a0a5-2fe0dc366696)
 ***
 ## Step 5
-In Route 53, added an A Record in the Hosted zone of the domain created earlier, with the name resume (to match the bucket name) - this way the Bucket website endpoint (found in Proeprties of the bucket) url changes from http://myresume.davidrichey.org.s3-website-us-east-1.amazonaws.com to http://myresume.davidrichey.org/
+I then went to AWS Certificate Manager and requested a Public Certificate that I could use for https (I put in the domain name: davidrichey.org). 
+  
+  (https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html)
+  
+  After I requested it, I refreshed the console window and a new option appeared to create a DNS Validation in Route 53, so I clicked it in order for the request to be validated.
 
-![image](https://github.com/StudentLoans999/AWS/assets/77641113/02310990-be91-4179-88db-0fc15b0bd27f)
+  (https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html)
+  
+  This created a new CNAME record:
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/3b6d7927-1e05-4288-bfbf-dd30e14b28cb)
+***
+## Step 6
+I went back to the CloudFront Distribution and in the General menu, I edited the Settings to create an Alternate domain name (CNAME) with the value of davidrichey.org (since the CloudFront domain name is actually whatever it was created as, it will follow this kind of name format .cloudfront.net)
+  
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/d73f8087-8b77-42e0-9f09-e490660e0350)
+  
+  I also associated the certificate I created earlier.
+  
+  Make sure IPv6 is set to Off, since having it On will add extra steps - this post should help with this step and the next if you get stuck, and offers the additional steps if you do use IPv6 (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html)
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/8274cd55-51c2-4046-bcd7-54094149a6e7)
+## Step 7
+This step is also Step 7 in the link I posted above.
 
-**********************
+  In Route 53, I added an A Record in the Hosted zone of the domain created earlier, with the name davidrichey.org that routes traffic to the CloudFront distribution's domain name (the .cloudfront.net looking name) 
+  
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/ee16abb3-8fe2-4e65-a94c-cb87e4320a7c)
+  
+  (this post has good info: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html)
+  
+  Give it a few minutes to apply and then in a new window, open davidrichey.org and make sure it displays properly and is https (Google Chrome shows it as a lock symbol).
+  If it doesn't, one of the steps above didn't get completed correctly. In the link above, step 8 says to use dig on your domain and that it should show CNAME but mine doesn't (I tried doing Step 7 here as a CNAME Record instead of an A Record and it didn't work - this offers an explanation: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html)
+  
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/625788bc-9d51-44d7-b318-cf80876b9b52)
+
+# Final product:
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/90024662-4a40-4334-8747-477aa276360c)
+
+Additional info:
 
 How I setup HTTPS (Behavior section on CloudFront) -
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html
 
 How I created CloudFront distribution (my own resume bucket - bucket endpoint & S3 website endpoint) -
 https://repost.aws/knowledge-center/cloudfront-serve-static-website
-
-How I setup alternate domain names (CloudFront distribution) -
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html
-
-How I setup to route the domain to the CloudFront distribution -
-https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html
-
-More info on Domain records -
-https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html
-
-How I requested a ACM public certificate -
-https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
-
-How I validated the ACM public certificate request -
-https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html
