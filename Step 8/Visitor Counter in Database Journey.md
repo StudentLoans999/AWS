@@ -3,6 +3,16 @@ My journey to complete Step 8 (using AWS DynamoDB to store the Visitor Counter's
 Below I listed the actions I took
 
 ***
+# Summary: #
+**Action 1 - Started the AWS course: Developing with Amazon DynamoDB**
+
+**Action 2 - Created Cloud9 and all the other services needed for it**
+
+**Action 3 - Installed AWS SDK for Python in Cloud9**
+
+**Action 4 - C**
+***
+
 ## Action 1 
 I started with taking the Developing with Amazon DynamoDB course on AWS https://explore.skillbuilder.aws/learn/course/1525/play;state=%255Bobject%2520Object%255D;autoplay=0
 
@@ -45,4 +55,15 @@ In Cloud9, I ran "sudo yum -y update" in order to update packages (none were nee
 Then I ran "sudo pip3 install boto3" to install the AWS SDK for Python 
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/3d0ed25f-780a-4b92-8479-d5978542bf56)
+***
+## Action 4
+In Cloud9, below is what I did for DynamoDB Local
+
+Installed Docker to the system by running "docker pull amazon/dynamodb-local" (amazon/dynamodb-local is the image)
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/f245bb3b-ecd6-4385-9f10-b4e5d317d6f7)
+
+Started dynamoDB by running "docker run -p 8000:8000 amazon/dynamodb-local" http://localhost:8000/ is the endpoint url (8000 is the port)
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/d9b533e9-eb97-41d3-a1fc-80ca297b5418)
 
