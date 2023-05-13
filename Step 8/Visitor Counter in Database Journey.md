@@ -9,12 +9,34 @@ I started with taking the Developing with Amazon DynamoDB course on AWS https://
 Actions 2-# are about that. Actions #+1 are about after I finished the course and worked on using DynamoDB for the CRC. 
 ***
 ## Action 2
-Created VPC (10.0.0.0/24)
+All of the steps below I used with help from this (
+https://docs.aws.amazon.com/cloud9/latest/user-guide/vpc-settings.html?icmpid=docs_ac9_console#vpc-settings-requirements-subnets-view )
+
+Created VPC (10.0.0.0/16)
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/8ff30d1a-9553-4759-a5d1-671b51406917)
+
 Created Subnet (10.0.0.0/24)
-Created Internet Gateway and Associated it to the VPC
-Edited Route Table to have a Route to igw (0.0.0.0/24 to igw)
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/1caa9e71-f0ec-4460-8609-04f9342947d9)
+
+
+Associated Route Table with subnet
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/7f4ea8c4-2543-42ce-b76b-3b88a8e74400)
+
+
+Created Internet Gateway and Attached it to the VPC
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/8e1cb95a-95b3-4045-b32e-0966e518ef54)
+
+Edited Route Table to have a Route to igw (0.0.0.0/0 to igw)
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/09f75742-51eb-4994-bb07-51a20f2ffa08)
+
 Created Cloud9 with the VPC and Subnet config from above
-https://docs.aws.amazon.com/cloud9/latest/user-guide/vpc-settings.html?icmpid=docs_ac9_console#vpc-settings-requirements-subnets-view 
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/d5d032ed-8f72-4c93-969f-438c701b39c3)
 ***
 ## Action 3
 
