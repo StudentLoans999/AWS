@@ -9,8 +9,7 @@ I started with taking the Developing with Amazon DynamoDB course on AWS https://
 Actions 2-# are about that. Actions #+1 are about after I finished the course and worked on using DynamoDB for the CRC. 
 ***
 ## Action 2
-All of the steps below I used with help from this (
-https://docs.aws.amazon.com/cloud9/latest/user-guide/vpc-settings.html?icmpid=docs_ac9_console#vpc-settings-requirements-subnets-view )
+All of the steps below I used with help from this (https://docs.aws.amazon.com/cloud9/latest/user-guide/vpc-settings.html?icmpid=docs_ac9_console#vpc-settings-requirements-subnets-view)
 
 Created VPC (10.0.0.0/16)
 
