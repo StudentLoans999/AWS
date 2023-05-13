@@ -33,11 +33,16 @@ Edited Route Table to have a Route to igw (0.0.0.0/0 to igw)
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/09f75742-51eb-4994-bb07-51a20f2ffa08)
 
-Created Cloud9 with the VPC and Subnet config from above
+Created Cloud9 IED with the VPC and Subnet config from above
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/d5d032ed-8f72-4c93-969f-438c701b39c3)
 ***
 ## Action 3
+In Cloud9, I ran "sudo yum -y update" in order to update packages (none were needed)
 
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/d4925fa8-8248-43fe-baf8-264828399805)
 
+Then I ran "sudo pip3 install boto3" to install the AWS SDK for Python 
+
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/3d0ed25f-780a-4b92-8479-d5978542bf56)
 
