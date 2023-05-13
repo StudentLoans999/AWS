@@ -67,4 +67,4 @@ Started dynamoDB by running "docker run -p 8000:8000 amazon/dynamodb-local" http
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/d9b533e9-eb97-41d3-a1fc-80ca297b5418)
 
-Put in access key by using "aws onfigure" (must have AWS CLI installed)
+Put in access key by using "aws onfigure" (must have AWS CLI installed) - I already had my access key info configured.
