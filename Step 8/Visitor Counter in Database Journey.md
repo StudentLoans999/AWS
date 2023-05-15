@@ -72,8 +72,15 @@ Started dynamoDB by running "docker run -p 8000:8000 amazon/dynamodb-local" http
 Put in access key by using "aws onfigure" (must have AWS CLI installed) - I already had my access key info configured.
 ***
 ## Action 5
-In Cloud9, below is the AWS CLI I did for interacting with DynamoDB
+In Cloud9, below is the AWS CLI I did for interacting with DynamoDB (here is a good source of info https://docs.aws.amazon.com/cli/latest/reference/dynamodb/create-table.html)
 
+KeyType of HASH is the partition key (unique) ; KeyType of RANGE is the sort key (optional, can only have one) ; Having both makes the unique identifier the combination of the HASH and RANGE.
+
+AttributeType of N is number ; AttributeType of S is string.
+
+Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL) --endpoint-url http://localhost:8000
+
+<br></br>
 **To Create a DynamoDB table :**
 
 aws dynamodb create-table ^
