@@ -10,7 +10,9 @@ Below I listed the actions I took
 
 **Action 3 - Installed AWS SDK for Python in Cloud9**
 
-**Action 4 - C**
+**Action 4 - Set up DynamoDB Local**
+
+**Action 5 - Interacted with DynamoDB**
 ***
 
 ## Action 1 
@@ -57,7 +59,7 @@ Then I ran "sudo pip3 install boto3" to install the AWS SDK for Python
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/3d0ed25f-780a-4b92-8479-d5978542bf56)
 ***
 ## Action 4
-In Cloud9, below is what I did for DynamoDB Local
+In Cloud9, below is what I did for setting up DynamoDB Local
 
 Installed Docker to the system by running "docker pull amazon/dynamodb-local" (amazon/dynamodb-local is the image)
 
@@ -68,3 +70,63 @@ Started dynamoDB by running "docker run -p 8000:8000 amazon/dynamodb-local" http
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/d9b533e9-eb97-41d3-a1fc-80ca297b5418)
 
 Put in access key by using "aws onfigure" (must have AWS CLI installed) - I already had my access key info configured.
+***
+## Action 5
+In Cloud9, below is the AWS CLI I did for interacting with DynamoDB
+
+**To Create a DynamoDB table :**
+
+aws dynamodb create-table ^
+
+  --table-name Movies ^
+  
+  --key-schema ^
+  
+   AttributeName=year,KeyType=HASH ^
+   
+   AttributeName=title,KeyType=RANGE ^
+   
+   --attribute-definitions ^
+   
+   AttributeName=year,AttributeType=N ^
+   
+   AttributeName=title,AttributeType=S ^
+   
+   --billing-mode PAY_PER_REQUEST
+  
+<br></br>
+**To Write an item into a DynamoDB table :**
+
+aws dynamodb put-item ^
+
+  --table-name Movies ^
+  
+  --item "{\"year\": {\"N\": \"1900\"}, \"title\": {\"S\": \"Example 1\"}}"
+  
+<br></br>
+**To Query a DynamoDB table :** 
+
+aws dynamodb query ^
+
+  --table-name Movies ^
+  
+  --key-condition-expression "#y = :yr" ^
+  
+  --projection-expression "title" ^
+  
+  --expression-attribute-names "{\"#y\":\"year\"}" ^
+  
+  --expression-attribute-values "{\":yr\":{\"N\":\"1985\"}}"
+  
+<br></br>
+**To scan a DynamoDB table :**
+
+aws dynamodb scan ^
+
+  --table-name Movies ^
+  
+  --filter-expression "title = :name" ^
+
+  --expression-attribute-values "{\":name\":{\"S\":\"Back to the Future\"}}" ^
+  
+  --return-consumed-capacity "TOTAL"
