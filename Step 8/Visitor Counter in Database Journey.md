@@ -134,7 +134,7 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/06f9c407-f8b9-449b-9ff8-192d102b590a)
   
 <br></br>
-**To scan a DynamoDB table (reads the full table) :**
+**To Scan a DynamoDB table (reads the full table) :**
 
     aws dynamodb scan ^
 
@@ -152,41 +152,136 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
 In Cloud9, below is the AWS SDK for Python I did for interacting with DynamoDB (here is a good source of info https://docs.aws.amazon.com/code-library/latest/ug/python_3_dynamodb_code_examples.html)
 
 <br></br>
+Use this code to import python :
+
+    import boto3
+    ddb = boto3.client('dynamodb')
+    ddb.describe_limits()
+
 **To Create a DynamoDB table :**
 
     def create_movie_table(dynamodb=None):
-      if not dynamodb:
+    if not dynamodb:
         dynamodb = boto3.resource('dynamoodb')
     
-    table = dynamodb.create_table
-    (
-      TableName='Movies',
-      KeySchema=
-      [
-        {
-          'AttributeName': 'year',
-          'KeyType': 'HASH' # Partition key
-        },
-        {
-          'AttributeName': 'title',
-          'KeyType': 'RANGE' # Sort key
+    table = dynamodb.create_table(
+        TableName='Movies',
+        KeySchema=[
+            {
+                'AttributeName': 'year',
+                'KeyType': 'HASH' # Partition key
+            },
+            {
+                'AttributeName': 'title',
+                'KeyType': 'RANGE' # Sort key
+            }
+        ],
+        AttributeDefinitions=[
+            {
+                'AttributeName': 'year',
+                'AttributeType': 'N'
+            },
+            {
+                'AttributeName': 'title',
+                'AttributeType': 'S'
+            },
+        ],
+        ProvisionedThroughput={
+            'ReadCapacityUnits': 10,
+            'WriteCapacityUnits': 10
         }
-      ],
-      AttributeDefinitions=
-      [
-        {
-          'AttributeName': 'year',
-          'AttributeType': 'N'
-        },
-        {
-          'AttributeName': 'title',
-          'AttributeType': 'S'
-        },
-      ],
-      ProvisionedThroughput=
-      {
-        'ReadCapacityUnits': 10,
-        'WriteCapacityUnits': 10
-      }
-    }
+    )
     return table
+
+<br></br>
+**To Write an item into a DynamoDB table :**
+
+    def load_movies(movies, dyanmodb=None):
+    if not dyanmodb:
+        dyanmodb = boto3.resource('dynamodb')
+
+    table = dyanmodb.Table('Movies')
+    for movie in movies:
+        year = int(movie['year'])
+        title = movie['title']
+        print("Adding movie:", year, title)
+        table.put_item(Item=movie)
+ 
+<br></br>
+**To Write multiple items into a DynamoDB table :**
+    
+    table = dynamodb.Table('Movies')
+    
+    with table.batch_writer() as batch:
+        batch.put_item(
+            Item={
+                'year': 1900,
+                'title': 'Example 10',
+            }
+        )
+        batch.put_item(
+            Item={
+                'year': 1990,
+                'title': 'Example 11',
+            }
+        )
+         
+<br></br>
+**To update items into a DynamoDB table :**
+ 
+    def update_movie(title, year, rating, plot, actors, dynamodb=None):
+    if not dynamodb:
+        dynamodb = boto3,resouce('dynamodb', endpoint_url="http://localhost:8000")
+
+    table = dynamodb.Table('Movies')
+
+    response = table.update_item(
+            Key={
+                'year': year,
+                'title': title
+            },
+            UpdateExpression="set info.rating=:r, info.plot=:p, info.actors=:a",
+            ExpressionAttributeValues={
+                ':r': Decimal(rating),
+                ':p': plot,
+                ':a': actors
+            },
+            ReturnValues="UPDATED_NEW"
+    )
+    return response
+<br></br>
+**To Scan a DynamoDB table :**
+ 
+    def scan_movies(year_range, display_movies, dynamodb=None):
+    if not dynamodb:
+        dynamodb = boto3.resource('dynamodb')
+
+    table = dynamodb.Table('Movies')
+    scan_kwargs = {
+        'FilterExpression': Key('year').between(*year_range),
+        'ProjectionExpression': "#yr, title, info.rating",
+        'ExpressionAttributeNames': {"#yr": "year"}
+    }
+
+    done = False
+    start_key = None
+    while not done:
+        if start_key:
+            scan_kwargs['ExclusiveStartKey'] = start_key
+        response = table.scan(**scan_kwargs)
+        display_movies(response.get('Items', []))
+        start_key = response.get('LastEvaluatedKey', None)
+        done = start_key is None
+        
+<br></br>
+**To Query a DynamoDB table :** 
+
+    def query_movies(year, dynamodb=None):
+    if not dynamodb:
+        dynamodb = boto3.resource('dynamodb')
+
+    table = dynamodb.Table('Movies')
+    response = table.query(
+        KeyConditionExpression=Key('year').eq(year)
+    )
+    return response['Items']
