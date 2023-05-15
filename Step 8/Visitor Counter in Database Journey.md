@@ -160,52 +160,89 @@ Use this code to import python :
 
 **To Create a DynamoDB table :**
 
+    import boto3
+
+
     def create_movie_table(dynamodb=None):
-    if not dynamodb:
-        dynamodb = boto3.resource('dynamoodb')
-    
-    table = dynamodb.create_table(
-        TableName='Movies',
-        KeySchema=[
-            {
-                'AttributeName': 'year',
-                'KeyType': 'HASH' # Partition key
-            },
-            {
-                'AttributeName': 'title',
-                'KeyType': 'RANGE' # Sort key
+        if not dynamodb:
+            dynamodb = boto3.resource('dynamodb')
+
+            # Explicitly specify a region
+            #dynamodb = boto3.resource('dynamodb',region_name='us-west-2')
+
+            # Use a DynamoDB Local endpoint
+            #dynamodb = boto3.resource('dynamodb',endpoint_url="http://localhost:8000")
+
+        table = dynamodb.create_table(
+            TableName='Movies',
+            KeySchema=[
+                {
+                    'AttributeName': 'year',
+                    'KeyType': 'HASH'  # Partition key
+                },
+                {
+                    'AttributeName': 'title',
+                    'KeyType': 'RANGE'  # Sort key
+                }
+            ],
+            AttributeDefinitions=[
+                {
+                    'AttributeName': 'year',
+                    'AttributeType': 'N'
+                },
+                {
+                    'AttributeName': 'title',
+                    'AttributeType': 'S'
+                },
+
+            ],
+            ProvisionedThroughput={
+                'ReadCapacityUnits': 10,
+                'WriteCapacityUnits': 10
             }
-        ],
-        AttributeDefinitions=[
-            {
-                'AttributeName': 'year',
-                'AttributeType': 'N'
-            },
-            {
-                'AttributeName': 'title',
-                'AttributeType': 'S'
-            },
-        ],
-        ProvisionedThroughput={
-            'ReadCapacityUnits': 10,
-            'WriteCapacityUnits': 10
-        }
-    )
-    return table
+        )
+        return table
+
+
+    if __name__ == '__main__':
+        movie_table = create_movie_table()
+        print("Table Name:", movie_table.table_name)
+        print("Table status:", movie_table.table_status)
+        print("Table ARN:", movie_table.table_arn)
+        client = boto3.client('dynamodb')
+        respons = client.describe_table(TableName='Movies')
+        print("Table desc:", respons)
 
 <br></br>
 **To Write an item into a DynamoDB table :**
+    
+    from decimal import Decimal
+    import json
+    import boto3
 
-    def load_movies(movies, dyanmodb=None):
-    if not dyanmodb:
-        dyanmodb = boto3.resource('dynamodb')
 
-    table = dyanmodb.Table('Movies')
-    for movie in movies:
-        year = int(movie['year'])
-        title = movie['title']
-        print("Adding movie:", year, title)
-        table.put_item(Item=movie)
+    def load_movies(movies, dynamodb=None):
+        if not dynamodb:
+            dynamodb = boto3.resource('dynamodb')
+
+            # Explicitly specify a region
+            #dynamodb = boto3.resource('dynamodb',region_name='us-west-2')
+
+            # Use a DynamoDB Local endpoint
+            #dynamodb = boto3.resource('dynamodb',endpoint_url="http://localhost:8000")
+
+        table = dynamodb.Table('Movies')
+        for movie in movies:
+            year = int(movie['year'])
+            title = movie['title']
+            print("Adding movie:", year, title)
+            table.put_item(Item=movie)
+
+
+    if __name__ == '__main__':
+        with open("moviedata.json") as json_file:
+            movie_list = json.load(json_file, parse_float=Decimal)
+        load_movies(movie_list)    
  
 <br></br>
 **To Write multiple items into a DynamoDB table :**
@@ -249,39 +286,84 @@ Use this code to import python :
             ReturnValues="UPDATED_NEW"
     )
     return response
+    
 <br></br>
 **To Scan a DynamoDB table :**
  
+    from pprint import pprint
+    import boto3
+    from boto3.dynamodb.conditions import Key
+
+
     def scan_movies(year_range, display_movies, dynamodb=None):
-    if not dynamodb:
-        dynamodb = boto3.resource('dynamodb')
+        if not dynamodb:
+            dynamodb = boto3.resource('dynamodb')
 
-    table = dynamodb.Table('Movies')
-    scan_kwargs = {
-        'FilterExpression': Key('year').between(*year_range),
-        'ProjectionExpression': "#yr, title, info.rating",
-        'ExpressionAttributeNames': {"#yr": "year"}
-    }
+            # Explicitly specify a region
+            #dynamodb = boto3.resource('dynamodb',region_name='us-west-2')
 
-    done = False
-    start_key = None
-    while not done:
-        if start_key:
-            scan_kwargs['ExclusiveStartKey'] = start_key
-        response = table.scan(**scan_kwargs)
-        display_movies(response.get('Items', []))
-        start_key = response.get('LastEvaluatedKey', None)
-        done = start_key is None
+            # Use a DynamoDB Local endpoint
+            #dynamodb = boto3.resource('dynamodb',endpoint_url="http://localhost:8000")
+
+        table = dynamodb.Table('Movies')
+        scan_kwargs = {
+            'FilterExpression': Key('year').between(*year_range),
+            'ProjectionExpression': "#yr, title, info.rating",
+            'ExpressionAttributeNames': {"#yr": "year"}
+        }
+
+        done = False
+        start_key = None
+        while not done:
+            if start_key:
+                scan_kwargs['ExclusiveStartKey'] = start_key
+            response = table.scan(**scan_kwargs)
+            display_movies(response.get('Items', []))
+            start_key = response.get('LastEvaluatedKey', None)
+            done = start_key is None
+
+
+    if __name__ == '__main__':
+        def print_movies(movies):
+            for movie in movies:
+                print(f"\n{movie['year']} : {movie['title']}")
+                pprint(movie['info'])
+
+        query_range = (1950, 1959)
+        print(
+            f"Scanning for movies released from {query_range[0]} to {query_range[1]}...")
+        scan_movies(query_range, print_movies)
         
 <br></br>
 **To Query a DynamoDB table :** 
 
-    def query_movies(year, dynamodb=None):
-    if not dynamodb:
-        dynamodb = boto3.resource('dynamodb')
+    import boto3
+    from boto3.dynamodb.conditions import Key
 
-    table = dynamodb.Table('Movies')
-    response = table.query(
-        KeyConditionExpression=Key('year').eq(year)
-    )
-    return response['Items']
+
+    def query_movies(year, dynamodb=None):
+        if not dynamodb:
+            dynamodb = boto3.resource('dynamodb')
+
+            # Explicitly specify a region
+            #dynamodb = boto3.resource('dynamodb',region_name='us-west-2')
+
+            # Use a DynamoDB Local endpoint
+            #dynamodb = boto3.resource('dynamodb',endpoint_url="http://localhost:8000")
+
+        table = dynamodb.Table('Movies')
+        response = table.query(
+            KeyConditionExpression=Key('year').eq(year)
+        )
+        return response['Items']
+
+
+    if __name__ == '__main__':
+        query_year = 1985
+        print(f"Movies from {query_year}")
+        movies = query_movies(query_year)
+        for movie in movies:
+            print(movie['year'], ":", movie['title'])
+
+<br></br>
+**To do CRUD activities in DynamoDB :** 
