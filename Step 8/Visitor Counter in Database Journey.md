@@ -105,6 +105,7 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
   
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/cf218796-e881-4b85-8fee-489a600f74f5)
 
+<br></br>
 **To Write an item into a DynamoDB table :**
 
     aws dynamodb put-item ^
@@ -113,6 +114,8 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
 
       --item "{\"year\": {\"N\": \"1900\"}, \"title\": {\"S\": \"Example 1\"}}"
   
+  ![image](https://github.com/StudentLoans999/AWS/assets/77641113/2833c230-45b6-4852-a87d-46a16879d07c)
+
 <br></br>
 **To Query a DynamoDB table (uses the partition key to retrieve specific items)  :** 
 
@@ -128,6 +131,8 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
 
       --expression-attribute-values "{\":yr\":{\"N\":\"1985\"}}"
   
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/06f9c407-f8b9-449b-9ff8-192d102b590a)
+  
 <br></br>
 **To scan a DynamoDB table (reads the full table) :**
 
@@ -140,6 +145,8 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
       --expression-attribute-values "{\":name\":{\"S\":\"Back to the Future\"}}" ^
 
       --return-consumed-capacity "TOTAL"
+      
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/db830668-9853-4944-a691-d81b917fd960)
 ***
 ## Action 6
 In Cloud9, below is the AWS SDK for Python I did for interacting with DynamoDB (here is a good source of info https://docs.aws.amazon.com/code-library/latest/ug/python_3_dynamodb_code_examples.html)
