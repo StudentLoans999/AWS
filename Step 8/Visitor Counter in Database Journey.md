@@ -150,15 +150,18 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
 ***
 ## Action 6
 In Cloud9, below is the AWS SDK for Python I did for interacting with DynamoDB (here is a good source of info https://docs.aws.amazon.com/code-library/latest/ug/python_3_dynamodb_code_examples.html)
-
-
+    
 Use this code to import python :
 
     import boto3
     ddb = boto3.client('dynamodb')
     ddb.describe_limits()
 
-**To Create a DynamoDB table :**
+All of the code snippets below are saved as individual python files, which can be run in Cloud9 by doing :
+
+    python3 fil;ename.py
+
+**To Create a DynamoDB table (createTable.py) :**
 
     import boto3
 
@@ -214,7 +217,7 @@ Use this code to import python :
         print("Table desc:", respons)
 
 <br></br>
-**To Write an item into a DynamoDB table :**
+**To Write an item into a DynamoDB table (loadMovieData.py) :**
     
     from decimal import Decimal
     import json
@@ -288,7 +291,7 @@ Use this code to import python :
     return response
     
 <br></br>
-**To Scan a DynamoDB table :**
+**To Scan a DynamoDB table (scanTable.py) :**
  
     from pprint import pprint
     import boto3
@@ -335,7 +338,7 @@ Use this code to import python :
         scan_movies(query_range, print_movies)
         
 <br></br>
-**To Query a DynamoDB table :** 
+**To Query a DynamoDB table (queryTable.py) :** 
 
     import boto3
     from boto3.dynamodb.conditions import Key
@@ -364,6 +367,3 @@ Use this code to import python :
         movies = query_movies(query_year)
         for movie in movies:
             print(movie['year'], ":", movie['title'])
-
-<br></br>
-**To do CRUD activities in DynamoDB :** 
