@@ -148,9 +148,9 @@ In Cloud9, below is the AWS SDK for Python I did for interacting with DynamoDB (
 <br></br>
 **To Create a DynamoDB table :**
 
-def create_movie_table(dynamodb=None):
-  if not dynamodb:
-    dynamodb = boto3.resource('dynamoodb')
+    def create_movie_table(dynamodb=None):
+      if not dynamodb:
+        dynamodb = boto3.resource('dynamoodb')
     
     table = dynamodb.create_table
     (
