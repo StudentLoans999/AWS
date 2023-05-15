@@ -151,7 +151,7 @@ Other parameters that can be used: --region us-east 1 ; (if using DyanmoDB LocaL
 ## Action 6
 In Cloud9, below is the AWS SDK for Python I did for interacting with DynamoDB (here is a good source of info https://docs.aws.amazon.com/code-library/latest/ug/python_3_dynamodb_code_examples.html)
 
-<br></br>
+
 Use this code to import python :
 
     import boto3
