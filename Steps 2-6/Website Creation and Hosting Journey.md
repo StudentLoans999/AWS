@@ -2,6 +2,16 @@ My journey to complete Step 2-6 (creating and hosting a static website that uses
 
 Below I listed the actions I took (I didn't list all the trouble I had trying to make this all work - like in Action 3 I tried Stacks A and C from the website without success)
 
+## Table of Contents
+- [Action 1](#Action-1)
+- [Action 1](#Action-2)
+- [Action 1](#Action-3)
+- [Action 1](#Action-4)
+- [Action 1](#Action-5)
+- [Action 1](#Action-6)
+- [Action 1](#Action-7)
+- [Final product](Final-product)
+
 ***
 # Summary: #
 **Action 1 - Registered a domain (davidrichey.org) using Route 53 in AWS**
@@ -102,7 +112,7 @@ This action is also Step 7 in the link I posted above.
   
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/625788bc-9d51-44d7-b318-cf80876b9b52)
 
-# Final product:
+## Final product:
 https://davidrichey.org/ aka davidrichey.org and also www.davidrichey.org
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/90024662-4a40-4334-8747-477aa276360c)
