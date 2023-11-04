@@ -6,6 +6,16 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 ## Table of Contents
 
 - [Summary](#Summary)
+- [Action 4.3](#Action 4.3)
+- [Action 4.4](#Action 4.4)
+- [Action 4.5](#Action 4.5)
+- [Action 5.1](#Action 5.1)
+- [Action 5.2](#Action 5.2)
+- [Action 5.3](#Action 5.3)
+- [Action 5.4](#Action 5.4)
+- [Action 5.6](#Action 5.6)
+- [Action 5.7](#Action 5.7)
+- [Final product](#Final product)
 
 ***
 ## Summary
@@ -106,7 +116,7 @@ So I found https://aws.amazon.com/blogs/opensource/managing-aws-organizations-us
 ***
 I then changed the 100-sso/_tasks.yml SsoDeveloper block to point the OrganizationalUnit from ActiveOU to DevOU so that only accounts in the DevOU have Developer permissions
 
-# Final product:
+## Final product
 
 ![image](https://user-images.githubusercontent.com/77641113/236975931-70bab849-c8ed-4f97-9146-5e1a5288d9cd.png)
 
