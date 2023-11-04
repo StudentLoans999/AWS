@@ -14,7 +14,7 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 - [Action 5.3](#Action-5.3)
 - [Action 5.4](#Action-5.4)
 - [Action 5.6](#Action-5.6)
-- [Action 5.7](#Action-5.7)
+- [Action 5.7](#Action-5-.7)
 - [Final product](#Final-product)
 
 ***
