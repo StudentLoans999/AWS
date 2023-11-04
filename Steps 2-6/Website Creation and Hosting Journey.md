@@ -3,6 +3,7 @@ My journey to complete Step 2-6 (creating and hosting a static website that uses
 Below I listed the actions I took (I didn't list all the trouble I had trying to make this all work - like in Action 3 I tried Stacks A and C from the website without success)
 
 ## Table of Contents
+- [Summary](#Summary)
 - [Action 1](#Action-1)
 - [Action 2](#Action-2)
 - [Action 3](#Action-3)
@@ -10,10 +11,10 @@ Below I listed the actions I took (I didn't list all the trouble I had trying to
 - [Action 5](#Action-5)
 - [Action 6](#Action-6)
 - [Action 7](#Action-7)
-- [Final product](Final-product)
+- [Final product](#Final-product)
 
 ***
-# Summary: #
+## Summary
 **Action 1 - Registered a domain (davidrichey.org) using Route 53 in AWS**
 
 **Action 2 - Created a bucket in AWS called davidrichey.org (needed to put the domain in the name so that DNS can route to the bucket in a later action) with some settings set**
