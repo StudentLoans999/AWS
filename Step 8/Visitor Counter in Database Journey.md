@@ -2,8 +2,17 @@ My journey to complete Step 8 (using AWS DynamoDB to store the Visitor Counter's
 
 Below I listed the actions I took
 
+## Table of Contents
+- [Summary](#Summary)
+- [Action 1](#Action-1)
+- [Action 2](#Action-2)
+- [Action 3](#Action-3)
+- [Action 4](#Action-4)
+- [Action 5](#Action-5)
+- [Action 6](#Action-6)
+
 ***
-# Summary: #
+## Summary
 **Action 1 - Started the AWS course: Developing with Amazon DynamoDB**
 
 **Action 2 - Created Cloud9 and all the other services needed for it**
