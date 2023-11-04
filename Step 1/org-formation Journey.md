@@ -3,6 +3,10 @@ My journey to complete Step 1 (not following the website numbering structure, wh
 
 Below I listed the actions I took that needed extra explanation (otherwise followed the guide explicitly and easily enough)
 
+## Table of Contents
+
+- [Summary](#Summary:)
+
 ***
 # Summary: #
 **Action 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables**
