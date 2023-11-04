@@ -112,7 +112,7 @@ This action is also Step 7 in the link I posted above.
   
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/625788bc-9d51-44d7-b318-cf80876b9b52)
 
-## Final product:
+## Final product
 https://davidrichey.org/ aka davidrichey.org and also www.davidrichey.org
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/90024662-4a40-4334-8747-477aa276360c)
