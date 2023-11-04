@@ -6,15 +6,15 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 ## Table of Contents
 
 - [Summary](#Summary)
-- [Action 4.3](#Action-4.3)
-- [Action 4.4](#Action-4.4)
-- [Action 4.5](#Action-4.5)
-- [Action 5.1](#Action-5.1)
-- [Action 5.2](#Action-5.2)
-- [Action 5.3](#Action-5.3)
-- [Action 5.4](#Action-5.4)
-- [Action 5.6](#Action-5.6)
-- [Action 5.7](#Action-43)
+- [Action 4.3](#Action-43)
+- [Action 4.4](#Action-44)
+- [Action 4.5](#Action-45)
+- [Action 5.1](#Action-51)
+- [Action 5.2](#Action-52)
+- [Action 5.3](#Action-53)
+- [Action 5.4](#Action-54)
+- [Action 5.6](#Action-56)
+- [Action 5.7](#Action-57)
 - [Final product](#Final-product)
 
 ***
