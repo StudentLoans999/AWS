@@ -8,7 +8,7 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 - [Summary:](#Summary:)
 
 ***
-# Summary:
+## Summary:
 **Action 4.3 - Installed OrgFormation CLI (after installing AWS CLI) and stored credentials (Access Keys) securely using environment variables**
 
 **Action 4.4 - Created an AWS CodeCommit repository and an AWS CodePipeline by using OrgFormation CLI commands (these will be used to make all changes to the organization)**
