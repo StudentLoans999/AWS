@@ -5,7 +5,7 @@ Below I listed the actions I took that needed extra explanation (otherwise follo
 
 ## Table of Contents
 
-- [Summary:](#Summary)
+- [Summary](#Summary)
 
 ***
 ## Summary
