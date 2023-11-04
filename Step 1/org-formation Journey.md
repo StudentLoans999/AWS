@@ -4,7 +4,6 @@ My journey to complete Step 1 (not following the website numbering structure, wh
 Below I listed the actions I took that needed extra explanation (otherwise followed the guide explicitly and easily enough)
 
 ## Table of Contents
-
 - [Summary](#Summary)
 - [Action 4.3](#Action-43)
 - [Action 4.4](#Action-44)
