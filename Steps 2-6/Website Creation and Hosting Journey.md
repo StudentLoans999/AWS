@@ -4,12 +4,12 @@ Below I listed the actions I took (I didn't list all the trouble I had trying to
 
 ## Table of Contents
 - [Action 1](#Action-1)
-- [Action 1](#Action-2)
-- [Action 1](#Action-3)
-- [Action 1](#Action-4)
-- [Action 1](#Action-5)
-- [Action 1](#Action-6)
-- [Action 1](#Action-7)
+- [Action 2](#Action-2)
+- [Action 3](#Action-3)
+- [Action 4](#Action-4)
+- [Action 5](#Action-5)
+- [Action 6](#Action-6)
+- [Action 7](#Action-7)
 - [Final product](Final-product)
 
 ***
