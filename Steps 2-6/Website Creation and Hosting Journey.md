@@ -62,7 +62,7 @@ Created a bucket in AWS called davidrichey.org (needed to put the domain in the 
 ## Action 3 
 Used this website to make the S3 website URL use HTTPS and followed the steps for Stack B - didn't do Steps 4) and 5) since they don't apply since I already created a bucket policy and chose not to enable OAI: (https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-s3-amazon-cloudfront-a-match-made-in-the-cloud/)
   
-  To do Step 7), I did the actions below
+  To do Step 7, I did the actions below
 ***
 ## Action 4
 I went to the newly created CloudFront distribution and edited the Behavior to these settings (guided by arpanexe's answer here: https://stackoverflow.com/questions/36466092/custom-domain-for-api-gateway-returning-403)
