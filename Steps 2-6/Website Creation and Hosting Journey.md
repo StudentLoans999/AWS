@@ -25,7 +25,7 @@ Below I listed the actions I took (I didn't list all the trouble I had trying to
 
 **Action 5 - Created a Public Certificate and added a CNAME Record in the Route 53 domain for it**
 
-**Action 6 - Added two Alternative domain namea to the CloudFront distribution and associated the Public Certificate to it**
+**Action 6 - Added two Alternative domain names to the CloudFront distribution and associated the Public Certificate to it**
 
 **Action 7 - Added two A records in Route 53 for the domain to point the CloudFront distribution traffic to the Alternative domain names**
 ***
