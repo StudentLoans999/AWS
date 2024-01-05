@@ -1,7 +1,0 @@
-name: main
-on: 
-  push:
-    branches:
-    - 
-
-jobs: 
