@@ -1,8 +1,9 @@
-name: main
-on: 
+name: Copy website to S3 and invalidate CloudFront Distribution
+
+on:
   push:
     branches:
-    - /*
+    - Cloud-Resume-Challenge
 
 jobs:
   copy-website-to-s3-and-invalidate-cloudfront:
