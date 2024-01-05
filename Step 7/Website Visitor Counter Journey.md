@@ -16,9 +16,9 @@ Followed this website and updated my index.html and style.css file to include th
 I uploaded the new index.html and style.css into my S3 bucket, along with the newly created script.js
 ***
 ## Action 3
-The domain wouldn't update with the new html so I went into the CloudFront distribution and did a wildcard Invalidation /* which solved the issus.
+The domain wouldn't update with the new html so I went into the CloudFront distribution and did a wildcard Invalidation /* which solved the issue.
 # Final product
-https://davidrichey.org/ aka davidrichey.org and also www.davidrichey.org
+https://davidrichey.org/ aka davidrichey.org and also www.davidrichey.org (or could do anything in front of david if put a period in between, EX: example.davidrichey.org)
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/75f97f48-1961-4ca8-a6cd-e399f2b11512)
 
