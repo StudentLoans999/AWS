@@ -5,4 +5,4 @@ I created a Lambda function ([lambda_function.py](https://github.com/StudentLoan
 I then went to the Configuration tab and attached the AmazonDynamoDBFullAccess permission to the Lambda function's role (Lambda-CRC-API-role-wqf058a3) in the Permissions section.
 
 ![image](https://github.com/StudentLoans999/AWS/assets/77641113/bed286da-abd4-4618-a4aa-df4bcd8f97eb)
-![Uploading image.png…]()
+![image](https://github.com/StudentLoans999/AWS/assets/77641113/00713762-ad7a-4e1f-83d5-7107295a223e)
