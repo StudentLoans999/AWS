@@ -100,7 +100,7 @@ I went back to the CloudFront distribution and in the General menu, I edited the
 ## Action 7
 This action is also Step 7 in the link I posted above.
 
-  In Route 53, I added two A Recorda in the Hosted zone of the domain created earlier, with the namea davidrichey.org and *.davidrichey.org that routes traffic to the CloudFront distribution's domain name (the .cloudfront.net looking name) 
+  In Route 53, I added two A Records in the Hosted zone of the domain created earlier, with the names davidrichey.org and *.davidrichey.org that routes traffic to the CloudFront distribution's domain name (the .cloudfront.net looking name) 
   
   ![image](https://github.com/StudentLoans999/AWS/assets/77641113/f59897c3-2ea0-430e-a48a-4382145a7a85)
 
